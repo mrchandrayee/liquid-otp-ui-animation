@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d18">
+  <title>Liquid OTP UI Animation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="topbar"><span>Liquid OTP UI Animation</span></header>
+    <section class="verification-card" aria-labelledby="heading">
+      <h1 id="heading">Enter Security Code</h1>
+      <p class="subtitle">Please enter the 6-digit code sent to your email.</p>
+
+      <form id="otpForm" novalidate>
+        <div class="interaction-area">
+          <div class="liquid-layer" aria-hidden="true">
+            <div class="blob-wrapper" id="blobs">
+              <div class="blob"></div><div class="blob"></div><div class="blob"></div>
+              <div class="blob"></div><div class="blob"></div><div class="blob"></div>
+            </div>
+          </div>
+
+          <div class="inputs-layer" id="inputs">
+            <input type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="1" class="otp-input" aria-label="Digit 1" autofocus>
+            <input type="text" inputmode="numeric" maxlength="1" class="otp-input" aria-label="Digit 2">
+            <input type="text" inputmode="numeric" maxlength="1" class="otp-input" aria-label="Digit 3">
+            <input type="text" inputmode="numeric" maxlength="1" class="otp-input" aria-label="Digit 4">
+            <input type="text" inputmode="numeric" maxlength="1" class="otp-input" aria-label="Digit 5">
+            <input type="text" inputmode="numeric" maxlength="1" class="otp-input" aria-label="Digit 6">
+          </div>
+        </div>
+
+        <div class="status-icon check" id="successIcon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path class="draw-path" d="M4 12.6l4.8 4.9L20 6.5"/></svg>
+        </div>
+        <div class="status-icon cross" id="errorIcon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path class="draw-path" d="M18 6L6 18M6 6l12 12"/></svg>
+        </div>
+
+        <p class="message" id="message" aria-live="polite"></p>
+        <button class="submit-button" id="submitButton" type="submit">Confirm Identity</button>
+      </form>
+      <p class="hint">Demo: enter <strong>123456</strong> for success. Any other 6 digits show an error.</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
